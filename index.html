@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Pokedex</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div><img src="./assets/pokedex-3d-logo.png" width="350px" height="auto"></div>
+<div class="gba">
+    <div class="led-red"></div>
+    <div class="led-yellow" style="margin-left:45px;"></div>
+    <div class="bolita"><lottie-player src="https://assets6.lottiefiles.com/packages/lf20_iwmd6pyr.json"  background="transparent"  speed=".5"  style="width: 40px; height: 40px;"  autoplay></lottie-player></div>
+    <form action="" onsubmit="searchPokemon(event)">
+        <input type="text" name="pokemon" class="buscar" autocomplete="off" placeholder="Buscar por Id o Nombre">
+    </form>
+    
+    <div data-poke-card class="poke-card">
+        <div data-poke-name> Pokedex</div>
+        <div data-poke-img-container class="img-container">
+            <img data-poke-img class="poke-img" src="./assets/PokemonWho.png" width="250px" height="180px">
+        </div>
+        <div data-poke-id></div>
+        <div data-poke-types class="poke-types"></div>
+        <div data-poke-stats class="poke-stats"></div>
+        <div data-poke-cries-container class="poke-cries">
+            <audio data-poke-cry src="./assets/cries/1.mp3" type="audio/mpeg" autoplay="true">
+                Your browser does not support the audio element.
+            </audio>
+        </div>
+    </div>
+</div>
+<div class="gba controles">
+    <div class=""> 
+        <img style="margin-left:1em; margin-top: 1em;"src="./assets/Cross.png" width="250%" height="auto">
+    </div>
+    <div class="glass"> <lottie-player style="align-items: center;" src="https://assets4.lottiefiles.com/packages/lf20_wpkegqib.json"  background="transparent"  speed=".5"  style="width: 100%; height: auto;"  autoplay></lottie-player>
+    </div>
+</div>
+</body>
+<footer>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <script src="./js/pokedex.js" type="text/JavaScript" defer></script> 
+</footer>
+</html>
+
