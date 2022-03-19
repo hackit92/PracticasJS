@@ -6,6 +6,7 @@ const pokeId = document.querySelector('[data-poke-id]');
 const pokeTypes = document.querySelector('[data-poke-types]');
 const pokeStats = document.querySelector('[data-poke-stats]');
 const pokeCry = document.querySelector('[data-poke-cry]');
+const pokeMoves = document.querySelector('[data-poke-moves]');
 
 
 //relación de colores//
@@ -35,7 +36,7 @@ const searchPokemon = event => {
     fetch(`https://pokeapi.co/api/v2/pokemon/${value.toLowerCase()}`)
         .then(data => data.json())
         .then(response => renderPokemonData(response))
-        .catch(err => renderNotFound())
+        //.catch(err => renderNotFound())
 }
 
 const renderPokemonData = data => {
@@ -48,6 +49,11 @@ const renderPokemonData = data => {
     renderPokemonTypes(types);
     renderPokemonStats(stats);
     playPokemonCry(data);
+    let movimientos = data.moves.map(mov => mov.move.name); console.log(movimientos);
+    const td = document.createElement("div");
+    td.innerHTML = movimientos;
+    pokeMoves.appendChild(td);
+
 }
 
 const setCardColor = types => {
@@ -96,3 +102,4 @@ function playPokemonCry(data) {
     pokeCry.setAttribute('src', `./assets/cries/${data.id}.mp3`);
    
 }
+
